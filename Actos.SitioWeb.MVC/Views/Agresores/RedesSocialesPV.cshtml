@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Actos.SitioWeb.MVC.ServicioWeb.RedSocial>
+
+<div class="table-responsive" style="height: 250px; overflow: auto;">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

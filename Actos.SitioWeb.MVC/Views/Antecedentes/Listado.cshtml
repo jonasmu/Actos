@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Actos.SitioWeb.MVC.ServicioWeb.Antecedente>
+
+@{
+    ViewBag.Title = "- Antecedentes";
+}
+
+
+<br />
+<br />
+
+<div class="modulo">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Listado de antecedentes</h2>
+        </div>
+        <br class="visible-sm" />
+        <div class="col-md-2">
+            <input type="button" id="btnCrear" value="Crear antecedente" class="btn btn-default" />
+        </div>
+    </div>
+    <hr />
+
+        <div class="moduloR form-horizontal">
+            <div class="form-group">
+                <label for="txtBuscar" class="col-md-1 control-label">Buscar</label>
+                <div class="col-md-3">
+                    <input type="search" class="form-control" id="txtBuscar" value="" />
+                </div>
+
+                <div class="col-md-2">
+                    <select id="ddlFiltroPor" class="form-control">
+                        <option value="Todos">Todos los filtros</option>
+                        <option value="Nombre">Nombre</option>
+                        <option value="Victima">Victima</option>
+                        <option value="Agresor">Agresor</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <select id="ddlPuntajePor" class="form-control">
+                        <option value="Todos">Todos los puntajes</option>
+                        <option value="SinPuntos">Sin puntos</option>
+                        <option value="Bajos">Bajos</option>
+                        <option value="Medios">Medios</option>
+                        <option value="Altos">Altos</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <select id="ddlEstadoPor" class="form-control">
+                        <option value="Todos">Todos los estados</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-warning" id="btnBuscar" value="Buscar" />
+                </div>
+            </div>
+        </div>
+
+
+    <br />
+
+    <div id="divCargando" class="text-center">
+        <img src="~/Images/cargando.gif" />
+    </div>
+
+    <div id="contenedorTabla"></div>
+</div>
+
+
+<!-- VENTANAS MODALES -->
+<div id="modalCrear"></div>
+<div id="modalDetalle"></div>
+
+<script type="text/javascript" src="~/Scripts/appjs/antecedentes-listado.js"></script>

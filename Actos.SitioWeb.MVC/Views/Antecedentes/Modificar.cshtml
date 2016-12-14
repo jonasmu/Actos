@@ -1,0 +1,93 @@
+﻿@model Actos.SitioWeb.MVC.Models.Antecedentes.ModificarViewModel
+
+@{
+    ViewBag.Title = "Modificar";
+}
+
+<!--ATRIBUTOS-->
+<input type="hidden" id="hdnId" value="@Model.Antecedente.Id" />
+<input type="hidden" id="hdnAgresorId" value="@Model.Antecedente.Agresor.Id" />
+<input type="hidden" id="hdnVictimaId" value="@Model.Antecedente.Victima.Id" />
+
+
+<div class="modulo">
+
+    <div id="error" style="color:red; font-size:20px; text-align:center"></div>
+    <div class="text-center">
+        <input type="button" id="btnAplicarCambios" value="Aplicar cambios" class="btn btn-success" />
+    </div>
+
+    <hr />
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Antecedente.Nombre, htmlAttributes: new { @class = "control-label col-lg-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Antecedente.Nombre, new { htmlAttributes = new { id = "txtNombre", @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="ddlTipoEstado">Estado</label>
+            <div class="col-lg-8">
+                <select id="ddlTipoEstado" class="form-control">
+                    @foreach (var item in Model.Estados)
+                    {
+                        <option value="@item.Id">@item.Nombre</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4">Víctima</label>
+            <div class="col-lg-8">
+                <span id="spanVictimaElegida">@Model.Antecedente.Victima.Nombre @Model.Antecedente.Victima.Apellido @Model.Antecedente.Victima.Apodo</span>
+                <input type="button" id="btnElegirVictima" value="Cambiar" class="btn btn-link" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4">Agresor</label>
+            <div class="col-lg-8">
+                <span id="spanAgresorElegido">@Model.Antecedente.Agresor.Nombre @Model.Antecedente.Agresor.Apellido @Model.Antecedente.Agresor.Apodo</span>
+                <input type="button" id="btnElegirAgresor" value="Cambiar" class="btn btn-link" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Antecedente.Fecha, htmlAttributes: new { @class = "control-label col-lg-4" })
+            <div class="col-lg-8">
+                @Html.TextBoxFor(model => model.Antecedente.Fecha, new { id = "dtpFecha", @Value = Model.Antecedente.Fecha.ToString(" dd/MM/yyyy"), @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Antecedente.Ubicacion, htmlAttributes: new { @class = "control-label col-lg-4" })
+            <div class="col-lg-8">
+                @Html.EditorFor(model => model.Antecedente.Ubicacion, new { htmlAttributes = new { id = "txtUbicacion", @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Antecedente.Observaciones, htmlAttributes: new { @class = "control-label col-lg-4" })
+            <div class="col-lg-8">
+                @Html.EditorFor(model => model.Antecedente.Observaciones, new { htmlAttributes = new { id = "txtObservaciones", @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Antecedente.Perjuicios, htmlAttributes: new { @class = "control-label col-lg-4" })
+            <div class="col-lg-8">
+                @Html.EditorFor(model => model.Antecedente.Perjuicios, new { htmlAttributes = new { id = "txtPerjuicios", @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalElegirVictima"></div>
+<div id="modalElegirAgresor"></div>
+
+
+<script src="~/Scripts/appjs/antecedentes-modificar-crearpv.js"></script>
+<script src="~/Scripts/appjs/antecedentes-modificar.js"></script>

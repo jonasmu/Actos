@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Actos.BaseDatos</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{37a262a4-dc47-42bc-9184-a29ee118c2da}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Actos.BaseDatos</RootNamespace>
+    <AssemblyName>Actos.BaseDatos</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Script" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Victimas.sql" />
+    <Build Include="dbo\Tables\TiposTelefonos.sql" />
+    <Build Include="dbo\Tables\TiposRedesSociales.sql" />
+    <Build Include="dbo\Tables\TiposDirecciones.sql" />
+    <Build Include="dbo\Tables\Localidades.sql" />
+    <Build Include="dbo\Tables\Estados.sql" />
+    <Build Include="dbo\Tables\Antecedentes.sql" />
+    <Build Include="dbo\Tables\AgresoresTelefonos.sql" />
+    <Build Include="dbo\Tables\AgresoresRedesSociales.sql" />
+    <Build Include="dbo\Tables\AgresoresDirecciones.sql" />
+    <Build Include="dbo\Tables\Agresores.sql" />
+    <Build Include="dbo\Tables\AntecedentesVictimas.sql" />
+    <Build Include="dbo\Stored Procedures\Victimas_Modificar.sql" />
+    <Build Include="dbo\Stored Procedures\Victimas_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\Victimas_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Victimas_DevolverPorId.sql" />
+    <Build Include="dbo\Stored Procedures\TiposTelefonos_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\TiposRedesSociales_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\TiposDirecciones_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Localidades_Modificar.sql" />
+    <Build Include="dbo\Stored Procedures\Localidades_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\Localidades_Eliminar.sql" />
+    <Build Include="dbo\Stored Procedures\Localidades_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Localidades_DevolverPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Estados_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_Modificar.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_Eliminar.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_DevolverPorVictima.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_DevolverPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Antecedentes_DevolverPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresTelefonos_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresTelefonos_EliminarPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresTelefonos_DevolverPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresRedesSociales_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresRedesSociales_EliminarPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresRedesSociales_DevolverPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresDirecciones_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresDirecciones_EliminarPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\AgresoresDirecciones_DevolverPorAgresor.sql" />
+    <Build Include="dbo\Stored Procedures\Agresores_Modificar.sql" />
+    <Build Include="dbo\Stored Procedures\Agresores_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\Agresores_DevolverTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Agresores_DevolverPorId.sql" />
+    <Build Include="dbo\Stored Procedures\AntecedentesVictimas_Insertar.sql" />
+    <Build Include="dbo\Stored Procedures\AntecedentesVictimas_EliminarPorAntecedente.sql" />
+    <Build Include="dbo\Stored Procedures\AntecedentesVictimas_DevolverPorAntecedente.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Script\CargaInicial.sql" />
+  </ItemGroup>
+</Project>

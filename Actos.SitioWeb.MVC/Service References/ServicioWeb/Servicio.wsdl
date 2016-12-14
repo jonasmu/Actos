@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Servicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" />
+      <xsd:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicio_CrearLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverLocalidadPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverLocalidadPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverLocalidadPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverLocalidadPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearAntecedente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAntecedente" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearAntecedente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAntecedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarAntecedente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAntecedente" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarAntecedente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAntecedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarAntecedente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedente" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarAntecedente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentePorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentePorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentePorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentePorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentesPorAgresor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentesPorAgresor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentesPorAgresor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentesPorAgresorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentesPorVictima_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentesPorVictima" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentesPorVictima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentesPorVictimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentes" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAntecedentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAntecedentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_AgregarPuntaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarPuntaje" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_AgregarPuntaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarPuntajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverEstados" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposDirecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposDirecciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposDirecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposDireccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposRedesSociales_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposRedesSociales" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposRedesSociales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposRedesSocialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposTelefonos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposTelefonos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverTiposTelefonos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverTiposTelefonosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearAgresor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAgresor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearAgresor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAgresorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarAgresor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAgresor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarAgresor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAgresorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarAgresor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAgresor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarAgresor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAgresorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAgresorPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAgresorPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAgresorPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAgresorPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAgresores_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAgresores" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverAgresores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverAgresoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearVictima_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearVictima" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CrearVictima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearVictimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarVictima_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarVictima" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ModificarVictima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarVictimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarVictima_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVictima" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_EliminarVictima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVictimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverVictimaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverVictimaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverVictimaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverVictimaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverVictimas_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverVictimas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_DevolverVictimas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverVictimasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicio">
+    <wsdl:operation name="CrearLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CrearLocalidad" message="tns:IServicio_CrearLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CrearLocalidadResponse" message="tns:IServicio_CrearLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ModificarLocalidad" message="tns:IServicio_ModificarLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ModificarLocalidadResponse" message="tns:IServicio_ModificarLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/EliminarLocalidad" message="tns:IServicio_EliminarLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/EliminarLocalidadResponse" message="tns:IServicio_EliminarLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverLocalidadPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverLocalidadPorId" message="tns:IServicio_DevolverLocalidadPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverLocalidadPorIdResponse" message="tns:IServicio_DevolverLocalidadPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverLocalidad" message="tns:IServicio_DevolverLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverLocalidadResponse" message="tns:IServicio_DevolverLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearAntecedente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CrearAntecedente" message="tns:IServicio_CrearAntecedente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CrearAntecedenteResponse" message="tns:IServicio_CrearAntecedente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAntecedente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ModificarAntecedente" message="tns:IServicio_ModificarAntecedente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ModificarAntecedenteResponse" message="tns:IServicio_ModificarAntecedente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/EliminarAntecedente" message="tns:IServicio_EliminarAntecedente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/EliminarAntecedenteResponse" message="tns:IServicio_EliminarAntecedente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentePorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentePorId" message="tns:IServicio_DevolverAntecedentePorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentePorIdResponse" message="tns:IServicio_DevolverAntecedentePorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentesPorAgresor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentesPorAgresor" message="tns:IServicio_DevolverAntecedentesPorAgresor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentesPorAgresorResponse" message="tns:IServicio_DevolverAntecedentesPorAgresor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentesPorVictima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentesPorVictima" message="tns:IServicio_DevolverAntecedentesPorVictima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentesPorVictimaResponse" message="tns:IServicio_DevolverAntecedentesPorVictima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentes" message="tns:IServicio_DevolverAntecedentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAntecedentesResponse" message="tns:IServicio_DevolverAntecedentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPuntaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/AgregarPuntaje" message="tns:IServicio_AgregarPuntaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/AgregarPuntajeResponse" message="tns:IServicio_AgregarPuntaje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverEstados" message="tns:IServicio_DevolverEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverEstadosResponse" message="tns:IServicio_DevolverEstados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposDirecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverTiposDirecciones" message="tns:IServicio_DevolverTiposDirecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverTiposDireccionesResponse" message="tns:IServicio_DevolverTiposDirecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposRedesSociales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverTiposRedesSociales" message="tns:IServicio_DevolverTiposRedesSociales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverTiposRedesSocialesResponse" message="tns:IServicio_DevolverTiposRedesSociales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposTelefonos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverTiposTelefonos" message="tns:IServicio_DevolverTiposTelefonos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverTiposTelefonosResponse" message="tns:IServicio_DevolverTiposTelefonos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearAgresor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CrearAgresor" message="tns:IServicio_CrearAgresor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CrearAgresorResponse" message="tns:IServicio_CrearAgresor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAgresor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ModificarAgresor" message="tns:IServicio_ModificarAgresor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ModificarAgresorResponse" message="tns:IServicio_ModificarAgresor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAgresor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/EliminarAgresor" message="tns:IServicio_EliminarAgresor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/EliminarAgresorResponse" message="tns:IServicio_EliminarAgresor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAgresorPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAgresorPorId" message="tns:IServicio_DevolverAgresorPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAgresorPorIdResponse" message="tns:IServicio_DevolverAgresorPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAgresores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverAgresores" message="tns:IServicio_DevolverAgresores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverAgresoresResponse" message="tns:IServicio_DevolverAgresores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearVictima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CrearVictima" message="tns:IServicio_CrearVictima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CrearVictimaResponse" message="tns:IServicio_CrearVictima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarVictima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ModificarVictima" message="tns:IServicio_ModificarVictima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ModificarVictimaResponse" message="tns:IServicio_ModificarVictima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVictima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/EliminarVictima" message="tns:IServicio_EliminarVictima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/EliminarVictimaResponse" message="tns:IServicio_EliminarVictima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverVictimaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverVictimaPorId" message="tns:IServicio_DevolverVictimaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverVictimaPorIdResponse" message="tns:IServicio_DevolverVictimaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverVictimas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/DevolverVictimas" message="tns:IServicio_DevolverVictimas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/DevolverVictimasResponse" message="tns:IServicio_DevolverVictimas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearLocalidad">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CrearLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarLocalidad">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ModificarLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarLocalidad">
+      <soap:operation soapAction="http://tempuri.org/IServicio/EliminarLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverLocalidadPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverLocalidadPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverLocalidad">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearAntecedente">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CrearAntecedente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAntecedente">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ModificarAntecedente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedente">
+      <soap:operation soapAction="http://tempuri.org/IServicio/EliminarAntecedente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentePorId">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAntecedentePorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentesPorAgresor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAntecedentesPorAgresor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentesPorVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAntecedentesPorVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAntecedentes">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAntecedentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPuntaje">
+      <soap:operation soapAction="http://tempuri.org/IServicio/AgregarPuntaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverEstados">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposDirecciones">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverTiposDirecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposRedesSociales">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverTiposRedesSociales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverTiposTelefonos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverTiposTelefonos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearAgresor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CrearAgresor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAgresor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ModificarAgresor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAgresor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/EliminarAgresor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAgresorPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAgresorPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverAgresores">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverAgresores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CrearVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ModificarVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicio/EliminarVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverVictimaPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverVictimaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverVictimas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/DevolverVictimas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="BasicHttpBinding_IServicio" binding="tns:BasicHttpBinding_IServicio">
+      <soap:address location="http://localhost:61028/Servicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

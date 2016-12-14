@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" />
+  <xs:complexType name="Localidad">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoArea" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Localidad" nillable="true" type="tns:Localidad" />
+  <xs:complexType name="EntidadBaseOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntidadBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntidadBaseOfint" nillable="true" type="tns:EntidadBaseOfint" />
+  <xs:complexType name="ArrayOfLocalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Localidad" nillable="true" type="tns:Localidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalidad" nillable="true" type="tns:ArrayOfLocalidad" />
+  <xs:complexType name="Antecedente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Agresor" nillable="true" type="tns:Agresor" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="Estado" nillable="true" type="q1:Estado" />
+          <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Latitud" type="xs:double" />
+          <xs:element minOccurs="0" name="Longitud" type="xs:double" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Perjuicios" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Puntajes" nillable="true" type="tns:ArrayOfVictima" />
+          <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Victima" nillable="true" type="tns:Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Antecedente" nillable="true" type="tns:Antecedente" />
+  <xs:complexType name="Agresor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Caracteristicas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Direcciones" nillable="true" type="tns:ArrayOfDireccion" />
+          <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Metodos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ocupacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Puntaje" type="xs:int" />
+          <xs:element minOccurs="0" name="RedesSociales" nillable="true" type="tns:ArrayOfRedSocial" />
+          <xs:element minOccurs="0" name="Telefonos" nillable="true" type="tns:ArrayOfTelefono" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Agresor" nillable="true" type="tns:Agresor" />
+  <xs:complexType name="Persona">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Apodo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstaBorrado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Persona" nillable="true" type="tns:Persona" />
+  <xs:complexType name="ArrayOfDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Direccion" nillable="true" type="tns:Direccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDireccion" nillable="true" type="tns:ArrayOfDireccion" />
+  <xs:complexType name="Direccion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Calle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Localidad" nillable="true" type="tns:Localidad" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Piso" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="Tipo" nillable="true" type="q2:TipoDireccion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Direccion" nillable="true" type="tns:Direccion" />
+  <xs:complexType name="EntidadBaseOfunsignedByte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntidadBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntidadBaseOfunsignedByte" nillable="true" type="tns:EntidadBaseOfunsignedByte" />
+  <xs:complexType name="ArrayOfRedSocial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RedSocial" nillable="true" type="tns:RedSocial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRedSocial" nillable="true" type="tns:ArrayOfRedSocial" />
+  <xs:complexType name="RedSocial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="Tipo" nillable="true" type="q3:TipoRedSocial" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RedSocial" nillable="true" type="tns:RedSocial" />
+  <xs:complexType name="ArrayOfTelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefono" nillable="true" type="tns:Telefono" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelefono" nillable="true" type="tns:ArrayOfTelefono" />
+  <xs:complexType name="Telefono">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntidadBaseOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Localidad" nillable="true" type="tns:Localidad" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="Tipo" nillable="true" type="q4:TipoTelefono" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Telefono" nillable="true" type="tns:Telefono" />
+  <xs:complexType name="ArrayOfVictima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Victima" nillable="true" type="tns:Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVictima" nillable="true" type="tns:ArrayOfVictima" />
+  <xs:complexType name="Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Victima" nillable="true" type="tns:Victima" />
+  <xs:complexType name="ArrayOfAntecedente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Antecedente" nillable="true" type="tns:Antecedente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAntecedente" nillable="true" type="tns:ArrayOfAntecedente" />
+  <xs:complexType name="ArrayOfAgresor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Agresor" nillable="true" type="tns:Agresor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgresor" nillable="true" type="tns:ArrayOfAgresor" />
+</xs:schema>

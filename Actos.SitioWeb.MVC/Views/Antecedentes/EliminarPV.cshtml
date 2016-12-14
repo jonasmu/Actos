@@ -1,0 +1,17 @@
+﻿@model Actos.SitioWeb.MVC.ServicioWeb.Antecedente
+
+<span id="hdnId" class="hidden">@Html.DisplayFor(model => model.Id)</span>
+
+<div class="text-center">
+    <h4>¿Estas seguro que deseas eliminar el antecedente<br />
+    <span class="text-info">@Model.Nombre</span>?</h4>
+
+    <div class="form-actions no-color">
+        <input type="button" value="Eliminar" id="btnEliminarPV" class="btn btn-danger" />
+    </div>
+</div>
+
+
+<div id="modalEliminar"></div>
+
+<script src="~/Scripts/appjs/antecedentes-eliminarpv.js"></script>

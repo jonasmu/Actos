@@ -1,0 +1,17 @@
+﻿@model Actos.SitioWeb.MVC.ServicioWeb.Agresor
+
+<span id="hdnId" class="hidden">@Html.DisplayFor(model => model.Id)</span>
+
+<div class="text-center">
+    <h4>¿Estas seguro que deseas eliminar al agresor<br />
+    <span class="text-info">@Model.Nombre @Model.Apellido @Model.Apodo</span>?</h4>
+
+    <div class="form-actions no-color">
+        <input type="button" value="Eliminar" id="btnEliminarPV" class="btn btn-danger" />
+    </div>
+</div>
+
+
+<div id="modalEliminar"></div>
+
+<script src="~/Scripts/appjs/agresores-eliminarpv.js"></script>

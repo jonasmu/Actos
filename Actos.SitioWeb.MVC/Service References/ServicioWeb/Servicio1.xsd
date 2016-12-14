@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" />
+  <xs:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" />
+  <xs:element name="CrearLocalidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="localidad" nillable="true" type="q1:Localidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearLocalidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearLocalidadResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarLocalidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="localidad" nillable="true" type="q2:Localidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarLocalidadResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarLocalidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="localidad" nillable="true" type="q3:Localidad" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="localidadReemplazo" nillable="true" type="q4:Localidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarLocalidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="EliminarLocalidadResult" nillable="true" type="q5:Localidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverLocalidadPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverLocalidadPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverLocalidadPorIdResult" nillable="true" type="q6:Localidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverLocalidad">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverLocalidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverLocalidadResult" nillable="true" type="q7:ArrayOfLocalidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearAntecedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="antecedente" nillable="true" type="q8:Antecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearAntecedenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearAntecedenteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAntecedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="antecedente" nillable="true" type="q9:Antecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAntecedenteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAntecedente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="antecedente" nillable="true" type="q10:Antecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAntecedenteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentePorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="puntajes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentePorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAntecedentePorIdResult" nillable="true" type="q11:Antecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentesPorAgresor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="agresor" nillable="true" type="q12:Agresor" />
+        <xs:element minOccurs="0" name="puntajes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentesPorAgresorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAntecedentesPorAgresorResult" nillable="true" type="q13:ArrayOfAntecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentesPorVictima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="victima" nillable="true" type="q14:Victima" />
+        <xs:element minOccurs="0" name="puntajes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentesPorVictimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAntecedentesPorVictimaResult" nillable="true" type="q15:ArrayOfAntecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="puntajes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAntecedentesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAntecedentesResult" nillable="true" type="q16:ArrayOfAntecedente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarPuntaje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="antecedente" nillable="true" type="q17:Antecedente" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="victima" nillable="true" type="q18:Victima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarPuntajeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverEstados">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverEstadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="DevolverEstadosResult" nillable="true" type="q19:ArrayOfEstado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposDirecciones">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposDireccionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="DevolverTiposDireccionesResult" nillable="true" type="q20:ArrayOfTipoDireccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposRedesSociales">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposRedesSocialesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="DevolverTiposRedesSocialesResult" nillable="true" type="q21:ArrayOfTipoRedSocial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposTelefonos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverTiposTelefonosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" minOccurs="0" name="DevolverTiposTelefonosResult" nillable="true" type="q22:ArrayOfTipoTelefono" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearAgresor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="agresor" nillable="true" type="q23:Agresor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearAgresorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearAgresorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAgresor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="agresor" nillable="true" type="q24:Agresor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarAgresorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAgresor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="agresor" nillable="true" type="q25:Agresor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAgresorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAgresorPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="telefonos" type="xs:boolean" />
+        <xs:element minOccurs="0" name="direcciones" type="xs:boolean" />
+        <xs:element minOccurs="0" name="redesSociales" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAgresorPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAgresorPorIdResult" nillable="true" type="q26:Agresor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAgresores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="telefonos" type="xs:boolean" />
+        <xs:element minOccurs="0" name="direcciones" type="xs:boolean" />
+        <xs:element minOccurs="0" name="redesSociales" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverAgresoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverAgresoresResult" nillable="true" type="q27:ArrayOfAgresor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearVictima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="victima" nillable="true" type="q28:Victima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearVictimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CrearVictimaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarVictima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="victima" nillable="true" type="q29:Victima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarVictimaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVictima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="victima" nillable="true" type="q30:Victima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarVictimaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverVictimaPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverVictimaPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverVictimaPorIdResult" nillable="true" type="q31:Victima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverVictimas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverVictimasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" minOccurs="0" name="DevolverVictimasResult" nillable="true" type="q32:ArrayOfVictima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,372 @@
+﻿@model Actos.SitioWeb.MVC.Models.Agresores.ModificarViewModel
+
+@{
+    ViewBag.Title = "Modificar";
+}
+
+
+<!--ATRIBUTO QUE GUARDA BOTON PRESIONADO DE DIRECCIONES REDES Y TELEFONOS-->
+<input type="hidden" id="hdnId" value="@Model.Agresor.Id" />
+<input type="hidden" id="hdnDirRedTel" value="Direcciones" />
+
+<div class="modulo">
+
+    <div id="error" style="color:red; font-size:20px; text-align:center"></div>
+    <div class="text-center">
+        <input type="button" id="btnAplicarCambios" value="Aplicar cambios" class="btn btn-success" />
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Agresor.Id)*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Nombre, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Nombre, new { htmlAttributes = new { @class = "form-control", id = "txtNombre" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Apellido, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Apellido, new { htmlAttributes = new { @class = "form-control", id = "txtApellido" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Apodo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Apodo, new { htmlAttributes = new { @class = "form-control", id = "txtApodo" } })
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Ocupacion, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Ocupacion, new { htmlAttributes = new { @class = "form-control", id = "txtOcupacion" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Caracteristicas, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Caracteristicas, new { htmlAttributes = new { @class = "form-control", id = "txtCaracteristicas" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agresor.Metodos, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Agresor.Metodos, new { htmlAttributes = new { @class = "form-control", id = "txtMetodos" } })
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+        <br class="hidden-lg" />
+        <hr class="hidden-lg" />
+        <br class="hidden-lg" />
+
+
+
+
+
+
+        <!--DIRECCIONES REDESSOCIALES TELEFONOS-->
+        <!--BOTONES-->
+        <div class="col-lg-6">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <input type="button" id="btnDirecciones" value="Dir." class="btn btn-warning form-control btn-xs" />
+                </div>
+                <div class="col-xs-4">
+                    <input type="button" id="btnRedesSociales" value="Red Soc." class="btn btn-default form-control btn-xs" />
+                </div>
+                <div class="col-xs-4">
+                    <input type="button" id="btnTelefonos" value="Tel." class="btn btn-default form-control btn-xs" />
+                </div>
+            </div>
+
+            <hr />
+
+
+
+
+
+
+
+
+            <!--DIRECCIONES-->
+            <!--AGREGAR-->
+            <div id="divDirecciones">
+
+                <input type="button" id="btnAgregarDireccion" class="btn btn-default btn-xs" value="Agregar" style="float:left; margin-right:10px;" />
+
+                <div id="modalAgregarDireccion" class="hidden">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="ddlTipoDireccion">Tipo</label>
+                            <div class="col-lg-8">
+                                <select id="ddlTipoDireccion" class="form-control">
+                                    @foreach (var item in Model.TiposDirecciones)
+                                    {
+                                        <option value="@item.Id">@item.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="ddlLocalidadDireccion">Localidad</label>
+                            <div class="col-lg-8">
+                                <select id="ddlLocalidadDireccion" class="form-control">
+                                    @foreach (var item in Model.Localidades)
+                                    {
+                                        <option value="@item.Id">@item.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Direccion.Calle, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.Direccion.Calle, new { htmlAttributes = new { id = "txtCalle", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Direccion.Numero, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.Direccion.Numero, new { htmlAttributes = new { id = "txtNumeroDireccion", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Direccion.Piso, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.Direccion.Piso, new { htmlAttributes = new { id = "txtPiso", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Direccion.Departamento, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.Direccion.Departamento, new { htmlAttributes = new { id = "txtDepartamento", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="button" value="Aceptar" id="btnAceptarDireccion" class="btn btn-warning" />
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--TABLA DE DIRECCIONES-->
+                <div class="table-responsive" style="height: 240px; overflow: auto;">
+                    <table id="tablaDirecciones" class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Direccion.Tipo)</th>
+                                <th>@Html.DisplayNameFor(model => model.Direccion.Localidad)</th>
+                                <th>@Html.DisplayNameFor(model => model.Direccion.Calle)</th>
+                                <th>@Html.DisplayNameFor(model => model.Direccion.Numero)</th>
+                                <th>@Html.DisplayNameFor(model => model.Direccion.Piso)</th>
+                                <th>Dpto</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Agresor.Direcciones)
+                            {
+                                <tr>
+                                    <td class="hidden">@Html.DisplayFor(modelItem => item.Tipo.Id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Tipo.Nombre)</td>
+                                    <td class="hidden">@Html.DisplayFor(modelItem => item.Localidad.Id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Localidad.Nombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Calle)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Numero)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Piso)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Departamento)</td>
+                                    <td><input type="button" class="btnQuitarDireccion btn btn-danger" value="X" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--REDES SOCIALES-->
+            <!--AGREGAR-->
+            <div id="divRedesSociales">
+
+                <input type="button" id="btnAgregarRedSocial" class="btn btn-default btn-xs" value="Agregar" style="float:left; margin-right:10px;" />
+
+                <div id="modalAgregarRedSocial" class="hidden">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="ddlTipoRedSocial">Tipo</label>
+                            <div class="col-lg-8">
+                                <select id="ddlTipoRedSocial" class="form-control">
+                                    @foreach (var item in Model.TiposRedesSociales)
+                                    {
+                                        <option value="@item.Id">@item.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RedSocial.Nombre, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.RedSocial.Nombre, new { htmlAttributes = new { id = "txtRedSocial", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="button" value="Aceptar" id="btnAceptarRedSocial" class="btn btn-warning" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive" style="height: 200px; overflow: auto;">
+                    <table id="tablaRedesSociales" class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.RedSocial.Tipo)</th>
+                                <th>@Html.DisplayNameFor(model => model.RedSocial.Nombre)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Agresor.RedesSociales)
+                            {
+                                <tr>
+                                    <td class="hidden">@Html.DisplayFor(modelItem => item.Tipo.Id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Tipo.Nombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                                    <td><input type="button" class="btnQuitarRedSocial btn btn-danger" value="X" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!--TELEFONOS-->
+            <!--AGREGAR-->
+            <div id="divTelefonos">
+
+                <input type="button" id="btnAgregarTelefono" class="btn btn-default btn-xs" value="Agregar" style="float:left; margin-right:10px;" />
+
+                <div id="modalAgregarTelefono" class="hidden">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="ddlTipoTelefono">Tipo</label>
+                            <div class="col-lg-8">
+                                <select id="ddlTipoTelefono" class="form-control">
+                                    @foreach (var item in Model.TiposTelefonos)
+                                    {
+                                        <option value="@item.Id">@item.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="ddlLocalidadTelefono">Localidad</label>
+                            <div class="col-lg-8">
+                                <select id="ddlLocalidadTelefono" class="form-control">
+                                    @foreach (var item in Model.Localidades)
+                                    {
+                                        <option value="@(item.Id +"_"+ item.CodigoArea)">@item.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Telefono.Numero, htmlAttributes: new { @class = "control-label col-lg-4" })
+                            <div class="col-lg-8">
+                                @Html.EditorFor(model => model.Telefono.Numero, new { htmlAttributes = new { id = "txtNumeroTelefono", @class = "form-control", autofocus = true } })
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="button" value="Aceptar" id="btnAceptarTelefono" class="btn btn-warning" />
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive" style="height: 200px; overflow: auto;">
+                    <table id="tablaTelefonos" class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Telefono.Tipo)</th>
+                                <th>@Html.DisplayNameFor(model => model.Telefono.Localidad)</th>
+                                <th>@Html.DisplayNameFor(model => model.Telefono.Numero)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Agresor.Telefonos)
+                            {
+                                <tr>
+                                    <td class="hidden">@Html.DisplayFor(modelItem => item.Tipo.Id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Tipo.Nombre)</td>
+                                    <td class="hidden">@Html.DisplayFor(modelItem => item.Localidad.Id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Localidad.CodigoArea)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Numero)</td>
+                                    <td><input type="button" class="btnQuitarTelefono btn btn-danger" value="X" /></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br />
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/appjs/agresores-modificar.js"></script>

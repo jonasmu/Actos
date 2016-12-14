@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Actos.SitioWeb.MVC.ServicioWeb.Antecedente>
+<div class="datagrid">
+    <div class="table-responsive">
+        <table class="table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Victima)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Agresor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fecha)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ubicacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Puntajes)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td class="IdClass hidden">
+                            <span>@Html.DisplayFor(modelItem => item.Id)</span>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Victima.Nombre)
+                            @Html.DisplayFor(modelItem => item.Victima.Apellido)
+                            @Html.DisplayFor(modelItem => item.Victima.Apodo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Agresor.Nombre)
+                            @Html.DisplayFor(modelItem => item.Agresor.Apellido)
+                            @Html.DisplayFor(modelItem => item.Agresor.Apodo)
+                        </td>
+                        <td>
+                            @String.Format("{0:dd/MM/yyyy}", item.Fecha)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ubicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Puntajes.ToList().Count)
+                        </td>
+                        <td>
+                            <input type="button" class="btnDetalle btn btn-warning" value="Detalle" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/Scripts/appjs/antecedentes-listadotablapv.js"></script>

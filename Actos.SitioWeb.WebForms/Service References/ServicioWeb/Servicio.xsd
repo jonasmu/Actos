@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades.Tipos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61028/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" />
+  <xs:complexType name="TipoDireccion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TipoBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoDireccion" nillable="true" type="tns:TipoDireccion" />
+  <xs:complexType name="TipoBase">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Actos.Modelo.Entidades" base="q1:EntidadBaseOfunsignedByte">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoBase" nillable="true" type="tns:TipoBase" />
+  <xs:complexType name="TipoRedSocial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TipoBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoRedSocial" nillable="true" type="tns:TipoRedSocial" />
+  <xs:complexType name="TipoTelefono">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TipoBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoTelefono" nillable="true" type="tns:TipoTelefono" />
+  <xs:complexType name="Estado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TipoBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Estado" nillable="true" type="tns:Estado" />
+  <xs:complexType name="ArrayOfEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Estado" nillable="true" type="tns:Estado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstado" nillable="true" type="tns:ArrayOfEstado" />
+  <xs:complexType name="ArrayOfTipoDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoDireccion" nillable="true" type="tns:TipoDireccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoDireccion" nillable="true" type="tns:ArrayOfTipoDireccion" />
+  <xs:complexType name="ArrayOfTipoRedSocial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoRedSocial" nillable="true" type="tns:TipoRedSocial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoRedSocial" nillable="true" type="tns:ArrayOfTipoRedSocial" />
+  <xs:complexType name="ArrayOfTipoTelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoTelefono" nillable="true" type="tns:TipoTelefono" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoTelefono" nillable="true" type="tns:ArrayOfTipoTelefono" />
+</xs:schema>

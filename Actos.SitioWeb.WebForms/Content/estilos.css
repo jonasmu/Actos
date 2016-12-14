@@ -1,0 +1,110 @@
+﻿
+body {
+    /*background-color:#6f9992;*/
+     background-color:#e9e9e9;
+    font-size: 24px;
+}
+
+#imgLogo {
+    border-radius: 10px;
+    margin-top: -8px;
+    width: 160px;
+    height: auto;
+}
+
+.imagenPerfil {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-bottom:15px;
+     box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.14);
+}
+
+.menu-cerrado {
+    background-color: #fed404;
+    border: none;
+}
+
+.menu-abierto {
+    background-color: #ffd400;
+    border: none;
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+#boton-menu:hover {
+    background-color: #ffda25;
+}
+
+#boton-menu:focus {
+    background-color: #f4fe04;
+}
+
+#boton-menu {
+    box-shadow: unset 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+#lnkAgresores,
+#lnkVictimas,
+#lnkAntecedentes {
+    font-variant: small-caps;
+    color: white;
+    text-shadow: 1px 1px 2px #333;
+}
+
+.activado {
+    background-color: rgba(255, 0, 0, 0.42);
+}
+
+.btn-personal{
+    font-variant:small-caps;
+    /*background-color:#fed404;*/
+     background-color:#6f9992;
+    color:black;
+    font-size:18px;
+}
+
+.table-personal{
+    font-size:15px;
+    background-color:#f6f6f6;
+}
+
+thead{
+    background-color:#6f9992;
+    color:black;
+
+}
+
+.mensaje-error{
+    font-size:16px;
+    color:#515151;
+    text-align:center;
+    position:fixed;
+    margin-left:10%;
+    z-index:1;
+}
+
+.modulosDetalle{
+    background-color: #ffffff; 
+    border-radius:15px;
+    padding:20px 20px 20px 20px;
+    box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.14);
+}
+
+.separador{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#btnEditar{
+    height: 20px;
+    padding:0px 0px 0px 0px;
+    margin-bottom: 20px;
+    font-size:20px;
+}
+
+.ocultar{
+    display:none;
+}

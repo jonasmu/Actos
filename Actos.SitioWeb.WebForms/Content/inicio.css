@@ -1,0 +1,81 @@
+﻿body {
+    background-color: black;
+    color: white;
+    background-image: url('../Images/inicioFondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 65%;
+    background-attachment: fixed;
+    font-size: 36px;
+    font-variant: small-caps;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.rectangulo1 {
+    height: 80px;
+    width: 70%;
+    background-color: #6f9992;
+    position: fixed;
+    margin-left: -10px;
+    border-radius:3px;
+    box-shadow:#c13636 0px 15px;
+}
+
+.rectangulo2 {
+    height: 100%;
+    width: 250px;
+    background-color: #fefdcc;
+    position: fixed;
+    margin-left: -10px;
+    border-radius:3px;
+}
+
+.relativo {
+    position: relative;
+}
+
+.absoluto {
+    position: absolute;
+}
+
+.actos-posicion-estilo{
+    text-shadow:0px 2px 5px #333;
+    color:#fed404;
+    font-size:60px;
+    right:1%;
+    top:5%;
+}
+
+html, body {
+    height: 100%;
+    position: fixed;
+}
+
+.main {
+    margin-left: 15%;
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: fixed;
+}
+
+.wrapper {
+    text-align:center;
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+a:active,
+a:link,
+a:visited{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover{
+    background-color:#6f9992;
+    display:block;
+    color:#fed404;
+}
+

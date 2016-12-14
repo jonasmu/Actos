@@ -1,0 +1,91 @@
+﻿@model Actos.SitioWeb.MVC.ServicioWeb.Agresor
+
+<!-- CAMPOS OCULTOS-->
+<span id="hdnId" class="hidden">@Html.DisplayFor(model => model.Id)</span>
+<input type="hidden" id="hdnDireccionesCargadas" value="false" />
+<input type="hidden" id="hdnRedesSocialesCargadas" value="false" />
+<input type="hidden" id="hdnTelefonosCargados" value="false" />
+
+<div>
+
+    <div class="text-center">
+        <input type="button" id="btnInformacion" value="Información" class="btn btn-warning btn-xs" />
+        <input type="button" id="btnDirecciones" value="Direcciones" class="btn btn-default btn-xs" />
+        <input type="button" id="btnRedesSociales" value="Redes sociales" class="btn btn-default btn-xs" />
+        <input type="button" id="btnTelefonos" value="Teléfonos" class="btn btn-default btn-xs" />
+    </div>
+
+    <div id="divInformacion">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Apodo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Apodo)
+            </dd>
+        </dl>
+
+        <hr />
+
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Caracteristicas)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Caracteristicas)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ocupacion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ocupacion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Metodos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Metodos)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+
+<div id="divDirecciones"></div>
+
+<div id="divRedesSociales"></div>
+
+<div id="divTelefonos"></div>
+
+<div class="text-center">
+    <input type="button" id="btnModificar" class="btn btn-warning" value="Modificar" />
+    @*@Html.ActionLink("Modificar", "Modificar", new { id = Model.Id }, new { onclick = "return Modificar();", @class = "btn btn-warning", style = "color:white" })*@
+    <input type="button" id="btnEliminar" class="btn btn-warning" value="Eliminar" />
+</div>
+
+<div id="modalEliminar"></div>
+
+<script src="~/Scripts/appjs/agresores-detallepv.js"></script>

@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal.master.cs" Inherits="Actos.SitioWeb.WebForms.Portal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+   <%-- <script type="text/javascript" src="Scripts/actos.js"></script>--%>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/estilos.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="conEncabezado" runat="server" />
+</head>
+<body>
+    <form id="frmFormulario" runat="server">
+        <nav class="navbar navbar-default menu-cerrado">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button id="boton-menu" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mnuBarraSuperior" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx">
+                        <img id="imgLogo" src="Images/logoTextoMenu_actos.jpg" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-abierto" id="mnuBarraSuperior">
+                    <ul class="nav navbar-nav">
+                        <li id="menuAgresores" runat="server">
+                            <asp:HyperLink ID="lnkAgresores" runat="server" /></li>
+                        <li id="menuVictimas" runat="server">
+                            <asp:HyperLink ID="lnkVictimas" runat="server" /></li>
+                        <li id="menuAntecedentes" runat="server">
+                            <asp:HyperLink ID="lnkAntecedentes" runat="server" /></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="conCuerpo" runat="server" />
+        </div>
+
+        <div style="margin-top:50px">
+
+        </div>
+    </form>
+</body>
+</html>
